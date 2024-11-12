@@ -1,9 +1,7 @@
-#include <stdbool.h>
+
 #include <stdio.h>
 
-bool hasEpsilonTransition[10][10], visited[10];
-
-int numberOfStates, numberOfTransitions, stateOne, stateTwo;
+int hasEpsilonTransition[10][10], visited[10],numberOfStates, numberOfTransitions, stateOne, stateTwo;
 
 char inputSymbol;
 
