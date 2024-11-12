@@ -738,7 +738,7 @@ YY_RULE_SETUP
 case 4:
 YY_RULE_SETUP
 #line 12 "tokenizer.l"
-{return yytext(0);}
+{return yytext[0];}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
@@ -1751,6 +1751,7 @@ void yyfree (void * ptr )
 #define YYTABLES_NAME "yytables"
 
 #line 13 "tokenizer.l"
+
 
 int yywrap(void){}
 
