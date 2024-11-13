@@ -1,12 +1,11 @@
 #include <ctype.h>
-#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 struct Expression {
     char operator[2], operandOne[5], operandTwo[5], result[5];
-    bool isRemoved;
+    int isRemoved;
 } expressions[10];
 
 int numberOfExpressions;

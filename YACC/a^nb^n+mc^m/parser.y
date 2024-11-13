@@ -1,6 +1,9 @@
 %{
 	#include <stdio.h>
 	#include <stdlib.h>
+	int yyerror(char *msg);
+	#include "lex.yy.c"
+
 %}
 
 %token A B C NL

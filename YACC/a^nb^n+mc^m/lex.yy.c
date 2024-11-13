@@ -351,8 +351,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 4
-#define YY_END_OF_BUFFER 5
+#define YY_NUM_RULES 6
+#define YY_END_OF_BUFFER 7
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -362,7 +362,7 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[10] =
     {   0,
-        0,    0,    5,    3,    4,    2,    1,    1,    0
+        0,    0,    7,    5,    4,    1,    2,    3,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -370,13 +370,13 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    2,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    3,    1,    1,    1,
-        1,    4,    5,    1,    6,    1,    7,    8,    8,    8,
-        8,    8,    8,    8,    8,    8,    8,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    3,    4,    5,    1,
 
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -397,14 +397,14 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[9] =
+static const YY_CHAR yy_meta[6] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1
+        1,    1,    1,    1,    1
     } ;
 
 static const flex_int16_t yy_base[10] =
     {   0,
-        0,    0,   11,   12,   12,   12,    2,    1,   12
+        0,    0,    6,    7,    7,    7,    7,    7,    7
     } ;
 
 static const flex_int16_t yy_def[10] =
@@ -412,16 +412,16 @@ static const flex_int16_t yy_def[10] =
         9,    1,    9,    9,    9,    9,    9,    9,    0
     } ;
 
-static const flex_int16_t yy_nxt[21] =
+static const flex_int16_t yy_nxt[13] =
     {   0,
-        4,    5,    6,    6,    6,    6,    6,    7,    8,    8,
-        9,    3,    9,    9,    9,    9,    9,    9,    9,    9
+        4,    5,    6,    7,    8,    9,    3,    9,    9,    9,
+        9,    9
     } ;
 
-static const flex_int16_t yy_chk[21] =
+static const flex_int16_t yy_chk[13] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    8,    7,
-        3,    9,    9,    9,    9,    9,    9,    9,    9,    9
+        1,    1,    1,    1,    1,    3,    9,    9,    9,    9,
+        9,    9
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -438,14 +438,11 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "calcu.l"
-#line 2 "calcu.l"
-    #include <stdio.h>
-    #include <stdlib.h>
-    int i=0,values[2];
-    char op;
-#line 447 "lex.yy.c"
-#line 448 "lex.yy.c"
+#line 1 "tokenizer.l"
+#line 2 "tokenizer.l"
+	#include "y.tab.h"
+#line 444 "lex.yy.c"
+#line 445 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -662,9 +659,10 @@ YY_DECL
 		}
 
 	{
-#line 10 "calcu.l"
+#line 5 "tokenizer.l"
 
-#line 667 "lex.yy.c"
+
+#line 665 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -697,7 +695,7 @@ yy_match:
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 12 );
+		while ( yy_base[yy_current_state] != 7 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -723,25 +721,36 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 11 "calcu.l"
-{ values[i++] = atoi(yytext); };
+#line 7 "tokenizer.l"
+{ return A; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 12 "calcu.l"
-{ op = yytext[0]; };
+#line 8 "tokenizer.l"
+{ return B; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 13 "calcu.l"
-{ };
+#line 9 "tokenizer.l"
+{ return C; }
 	YY_BREAK
 case 4:
+/* rule 4 can match eol */
 YY_RULE_SETUP
-#line 14 "calcu.l"
+#line 10 "tokenizer.l"
+{ return NL; }
+	YY_BREAK
+case 5:
+YY_RULE_SETUP
+#line 11 "tokenizer.l"
+{ return yytext[0]; }
+	YY_BREAK
+case 6:
+YY_RULE_SETUP
+#line 13 "tokenizer.l"
 ECHO;
 	YY_BREAK
-#line 744 "lex.yy.c"
+#line 753 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1746,40 +1755,10 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 14 "calcu.l"
+#line 13 "tokenizer.l"
 
 
-int yywrap(void){}
-
-int main() {
-
-	printf("\nEnter the operation: \n");
-
-	yylex();
-	
-	int result;
-	
-	switch (op) {
-		case '+':
-			result = values[0] + values[1];
-			break;
-		case '-':
-			result = values[0] - values[1];
-			break;
-		case '*':
-			result = values[0] * values[1];
-			break;
-		case '/':
-			result = values[0] / values[1];
-			break;
-		case '%':
-			result = values[0] % values[1];
-			break;
-	}
-	
-	printf("\nResult: %d", result);
-
-	printf("\n\n");
-
-	return 0;
+int yywrap() {
+	return 1;
 }
+
